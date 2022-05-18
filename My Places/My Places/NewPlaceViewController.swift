@@ -4,7 +4,7 @@
 //
 //  Created by Alexander Popov on 15.05.2022.
 //
-
+
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
@@ -20,7 +20,20 @@ class NewPlaceViewController: UITableViewController {
     // MARK: table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let camera = UIAlertAction.init(title: "Camera", style: .default) { _ in
+                self.chooseImagePicker(source: .camera)
+            }
+            let photo = UIAlertAction.init(title: "Photo", style: .default) { _ in
+                self.chooseImagePicker(source: .photoLibrary)
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             
+            actionSheet.addAction(camera)
+            actionSheet.addAction(photo)
+            actionSheet.addAction(cancel)
+            
+            present(actionSheet, animated: true)
         }
         else{
             view.endEditing(true)
@@ -40,7 +53,19 @@ extension NewPlaceViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
-    
-    
-    
+
+}
+
+// MARK: Work with image
+
+extension NewPlaceViewController {
+    func chooseImagePicker(source: UIImagePickerController.SourceType){
+        
+        if UIImagePickerController.isSourceTypeAvailable(source){
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            present(imagePicker, animated: true)
+        }
+    }
 }
