@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="o32-rd-ouv" customClass="CustomTableViewCell" customModule="My_Places" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="o32-rd-ouv" customClass="CustomTableViewCell" customModule="My_Places" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o32-rd-ouv" id="v6M-rz-ena">
@@ -236,11 +236,22 @@
                     <navigationItem key="navigationItem" title="New Place" id="Fac-Ak-sh2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ssj-QD-XkE">
                             <connections>
-                                <segue destination="kK5-3c-qYb" kind="unwind" unwindAction="cancelAction:" id="NIc-ny-XFW"/>
+                                <action selector="cancelAction:" destination="5u2-rT-VPW" id="Low-UE-JG4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="H4V-G2-yqg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="H4V-G2-yqg">
+                            <connections>
+                                <segue destination="kK5-3c-qYb" kind="unwind" unwindAction="unwindSegue:" id="lJi-Cm-mh0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="placeImage" destination="tAv-BO-Nm2" id="Y8h-xw-be9"/>
+                        <outlet property="placeLocation" destination="XM9-cu-enV" id="IWl-HR-Zfn"/>
+                        <outlet property="placeName" destination="W24-Ck-DnR" id="d5E-04-T9w"/>
+                        <outlet property="placeType" destination="XYJ-Eq-Biv" id="hP2-2Z-wgj"/>
+                        <outlet property="saveButton" destination="H4V-G2-yqg" id="8vb-GS-mBE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLV-nh-9eU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="kK5-3c-qYb" userLabel="Exit" sceneMemberID="exit"/>
@@ -269,7 +280,6 @@
         <!--Navigation Controller-->
         <scene sceneID="MqB-KP-7Sy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hZQ-tt-M8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8m2-Nm-n3p" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8XS-TE-GOb">
@@ -281,6 +291,7 @@
                         <segue destination="5u2-rT-VPW" kind="relationship" relationship="rootViewController" id="xjM-dJ-cg7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZQ-tt-M8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704.6728971962616" y="33.693304535637154"/>
         </scene>
