@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "Чайший Восход.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Чайший Восход@2x.jpg",
+      "filename" : "ZA@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Чайший Восход@3x.jpg",
+      "filename" : "ZA@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
