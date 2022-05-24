@@ -182,7 +182,7 @@
         <scene sceneID="0Gv-VW-U9X">
             <objects>
                 <navigationController id="zC7-9R-e7f" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="F8E-e4-xc5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F8E-e4-xc5">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -223,17 +223,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-Vq-iRb">
-                                <rect key="frame" x="0.0" y="88" width="428" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Name"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JJa-k8-i4x">
-                                <rect key="frame" x="0.0" y="119" width="428" height="807"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="29" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JJa-k8-i4x">
+                                <rect key="frame" x="0.0" y="120" width="428" height="806"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="76"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="H9q-bj-UXg" customClass="CustomTableViewCell" customModule="My_Places" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="85"/>
@@ -296,18 +289,35 @@
                                     <outlet property="delegate" destination="7Xh-Fg-2m7" id="J4b-Ab-sMt"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-Vq-iRb">
+                                <rect key="frame" x="0.0" y="88" width="428" height="32"/>
+                                <segments>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="7Xh-Fg-2m7" eventType="valueChanged" id="0UG-bF-LYB"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CQX-D8-R1U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lak-Vq-iRb" firstAttribute="leading" secondItem="CQX-D8-R1U" secondAttribute="leading" id="0dd-oy-Rit"/>
-                            <constraint firstItem="JJa-k8-i4x" firstAttribute="top" secondItem="Lak-Vq-iRb" secondAttribute="bottom" id="1p4-12-C6d"/>
                             <constraint firstItem="CQX-D8-R1U" firstAttribute="trailing" secondItem="Lak-Vq-iRb" secondAttribute="trailing" id="7xv-Hq-VHr"/>
-                            <constraint firstItem="Lak-Vq-iRb" firstAttribute="top" secondItem="CQX-D8-R1U" secondAttribute="top" id="cxC-eG-oOq"/>
+                            <constraint firstItem="JJa-k8-i4x" firstAttribute="leading" secondItem="CQX-D8-R1U" secondAttribute="leading" id="Meq-nv-ijE"/>
+                            <constraint firstItem="JJa-k8-i4x" firstAttribute="trailing" secondItem="CQX-D8-R1U" secondAttribute="trailing" id="hpI-29-fLP"/>
+                            <constraint firstItem="JJa-k8-i4x" firstAttribute="top" secondItem="Lak-Vq-iRb" secondAttribute="bottom" constant="1" id="lI1-kb-IJ6"/>
+                            <constraint firstAttribute="bottom" secondItem="JJa-k8-i4x" secondAttribute="bottom" id="mo9-wM-20a"/>
+                            <constraint firstItem="Lak-Vq-iRb" firstAttribute="top" secondItem="CQX-D8-R1U" secondAttribute="top" id="nnK-On-JCT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="tQA-8m-s1l">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Z7u-fg-eqe"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Z7u-fg-eqe">
+                            <connections>
+                                <action selector="reversedSorting:" destination="7Xh-Fg-2m7" id="Ram-Tj-pNi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sNY-rT-X6J">
                             <connections>
                                 <segue destination="8m2-Nm-n3p" kind="presentation" id="OxG-GP-AtF"/>
@@ -315,6 +325,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversedSortingButton" destination="Z7u-fg-eqe" id="UGv-iM-Bec"/>
+                        <outlet property="segmentedControl" destination="Lak-Vq-iRb" id="UOI-Of-ueG"/>
                         <outlet property="tableView" destination="JJa-k8-i4x" id="VTl-Qg-8Wi"/>
                     </connections>
                 </viewController>
