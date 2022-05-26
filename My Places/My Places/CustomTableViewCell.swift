@@ -21,7 +21,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var cosmosView: CosmosView!{
         didSet{
-            cosmosView.settings.fillMode = .half
+            cosmosView.settings.fillMode = .full
             cosmosView.settings.updateOnTouch = false
         }
     }
