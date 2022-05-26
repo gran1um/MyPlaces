@@ -75,23 +75,26 @@ class NewPlaceViewController: UITableViewController {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
-        }
+        
+        if segue.identifier != "showMap" {return}
+        
         let mapVC = segue.destination as! MapViewController
-        mapVC.place = currentPlace
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = placeLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
+        
     }
 
     func savePlace(){
         
-        var image: UIImage?
-        if imageIsChaned{
-            image = placeImage.image
-        }
-        else{
-            image = UIImage(named: "imagePlaceholder")
-        }
-        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: image?.pngData(), rating: Double(ratingControl.rating))
+        let image = imageIsChaned ? placeImage.image : UIImage(named: "imagePlaceholder")
+
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: image?.pngData(),
+                             rating: Double(ratingControl.rating))
         
         if currentPlace != nil{
             try! realm.write{
