@@ -258,6 +258,19 @@
                                     <action selector="closeVC" destination="EiO-GY-Vsy" eventType="touchUpInside" id="Tnx-1g-NC0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GV-rb-5gu">
+                                <rect key="frame" x="338" y="762" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Zcl-ri-z08"/>
+                                    <constraint firstAttribute="height" constant="50" id="shr-Ka-Nyr"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="findMe" destination="EiO-GY-Vsy" eventType="touchUpInside" id="uif-Wh-F6I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OEl-rI-J7N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -265,9 +278,11 @@
                             <constraint firstItem="e65-Vh-NfX" firstAttribute="trailing" secondItem="OEl-rI-J7N" secondAttribute="trailing" id="3ew-h9-df3"/>
                             <constraint firstItem="OEl-rI-J7N" firstAttribute="trailing" secondItem="ZKA-L4-h4j" secondAttribute="trailing" constant="20" id="9th-Z4-6FH"/>
                             <constraint firstItem="e65-Vh-NfX" firstAttribute="top" secondItem="BbC-es-z54" secondAttribute="top" id="G0X-db-lfs"/>
+                            <constraint firstItem="OEl-rI-J7N" firstAttribute="bottom" secondItem="6GV-rb-5gu" secondAttribute="bottom" constant="60" id="Tt5-IC-DQ6"/>
                             <constraint firstAttribute="bottom" secondItem="e65-Vh-NfX" secondAttribute="bottom" id="XMx-fh-xWn"/>
                             <constraint firstItem="ZKA-L4-h4j" firstAttribute="top" secondItem="BbC-es-z54" secondAttribute="top" constant="20" id="c2R-P1-Kju"/>
                             <constraint firstItem="e65-Vh-NfX" firstAttribute="leading" secondItem="OEl-rI-J7N" secondAttribute="leading" id="g2c-3v-PLn"/>
+                            <constraint firstItem="OEl-rI-J7N" firstAttribute="trailing" secondItem="6GV-rb-5gu" secondAttribute="trailing" constant="40" id="r5O-4w-UZJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -468,11 +483,12 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="cancel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
-        <image name="star" catalog="system" width="32" height="32"/>
-        <image name="star.fill" catalog="system" width="32" height="32"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
