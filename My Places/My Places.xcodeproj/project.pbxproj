@@ -25,6 +25,7 @@
 		854103E5282EC69400234A33 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854103E4282EC69400234A33 /* CustomTableViewCell.swift */; };
 		854103FA2830FACD00234A33 /* PlaceModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854103F92830FACD00234A33 /* PlaceModal.swift */; };
 		854D4B9C283110C500754995 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D4B9B283110C500754995 /* NewPlaceViewController.swift */; };
+		85A12C472841619700C02890 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A12C462841619700C02890 /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		854103E4282EC69400234A33 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		854103F92830FACD00234A33 /* PlaceModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModal.swift; sourceTree = "<group>"; };
 		854D4B9B283110C500754995 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		85A12C462841619700C02890 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		A6B17EE859A30F35FDEBB958 /* Pods_My_Places_My_PlacesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Places_My_PlacesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75A3DC2F4B19042D2D50B74 /* Pods-My Places.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Places.release.xcconfig"; path = "Target Support Files/Pods-My Places/Pods-My Places.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,19 +130,10 @@
 		8521CDE8282B002D0075545F /* My Places */ = {
 			isa = PBXGroup;
 			children = (
-				8521CDE9282B002D0075545F /* AppDelegate.swift */,
-				854103BA282C54E300234A33 /* MainViewController.swift */,
-				854D4B9B283110C500754995 /* NewPlaceViewController.swift */,
-				851679CC283FF4D300F5EDBB /* MapViewController.swift */,
-				854103F92830FACD00234A33 /* PlaceModal.swift */,
-				8514974E2839739A00B44E2C /* StorageManager.swift */,
-				8521CDEB282B002D0075545F /* SceneDelegate.swift */,
-				8521CDEF282B002D0075545F /* Main.storyboard */,
-				8521CDF2282B002E0075545F /* Assets.xcassets */,
-				8521CDF4282B002E0075545F /* LaunchScreen.storyboard */,
-				8521CDF7282B002E0075545F /* Info.plist */,
-				854103E4282EC69400234A33 /* CustomTableViewCell.swift */,
-				85149776283E077600B44E2C /* RatingControl.swift */,
+				85A12C482841747700C02890 /* ViewControllers */,
+				85A12C4C2841750400C02890 /* IBuilder */,
+				85A12C492841749E00C02890 /* Modals */,
+				85A12C4B284174C400C02890 /* Support Files */,
 			);
 			path = "My Places";
 			sourceTree = "<group>";
@@ -160,6 +153,56 @@
 				8521CE0C282B002E0075545F /* My_PlacesUITestsLaunchTests.swift */,
 			);
 			path = "My PlacesUITests";
+			sourceTree = "<group>";
+		};
+		85A12C482841747700C02890 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				85A12C4A284174A800C02890 /* Helpers */,
+				854103E4282EC69400234A33 /* CustomTableViewCell.swift */,
+				854D4B9B283110C500754995 /* NewPlaceViewController.swift */,
+				851679CC283FF4D300F5EDBB /* MapViewController.swift */,
+				854103BA282C54E300234A33 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		85A12C492841749E00C02890 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				854103F92830FACD00234A33 /* PlaceModal.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		85A12C4A284174A800C02890 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85149776283E077600B44E2C /* RatingControl.swift */,
+				8514974E2839739A00B44E2C /* StorageManager.swift */,
+				85A12C462841619700C02890 /* MapManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		85A12C4B284174C400C02890 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8521CDE9282B002D0075545F /* AppDelegate.swift */,
+				8521CDEB282B002D0075545F /* SceneDelegate.swift */,
+				8521CDF2282B002E0075545F /* Assets.xcassets */,
+				8521CDF7282B002E0075545F /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		85A12C4C2841750400C02890 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				8521CDEF282B002D0075545F /* Main.storyboard */,
+				8521CDF4282B002E0075545F /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 		A30568CE32C791F81038781F /* Pods */ = {
@@ -430,6 +473,7 @@
 				8514974F2839739A00B44E2C /* StorageManager.swift in Sources */,
 				851679CD283FF4D300F5EDBB /* MapViewController.swift in Sources */,
 				85149777283E077600B44E2C /* RatingControl.swift in Sources */,
+				85A12C472841619700C02890 /* MapManager.swift in Sources */,
 				8521CDEA282B002D0075545F /* AppDelegate.swift in Sources */,
 				854103E5282EC69400234A33 /* CustomTableViewCell.swift in Sources */,
 				8521CDEC282B002D0075545F /* SceneDelegate.swift in Sources */,
@@ -613,7 +657,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4XDZ9JNTK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "My Places/Info.plist";
+				INFOPLIST_FILE = "My Places/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -644,7 +688,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4XDZ9JNTK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "My Places/Info.plist";
+				INFOPLIST_FILE = "My Places/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
