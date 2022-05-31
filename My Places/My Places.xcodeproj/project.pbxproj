@@ -131,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				85A12C482841747700C02890 /* ViewControllers */,
+				85A12C4A284174A800C02890 /* Helpers */,
 				85A12C4C2841750400C02890 /* IBuilder */,
 				85A12C492841749E00C02890 /* Modals */,
 				85A12C4B284174C400C02890 /* Support Files */,
@@ -158,7 +159,6 @@
 		85A12C482841747700C02890 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85A12C4A284174A800C02890 /* Helpers */,
 				854103E4282EC69400234A33 /* CustomTableViewCell.swift */,
 				854D4B9B283110C500754995 /* NewPlaceViewController.swift */,
 				851679CC283FF4D300F5EDBB /* MapViewController.swift */,
